@@ -1,8 +1,9 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import Contactform from "../components/Contactform";
 export default function Contact() {
   return (
-    <div className="px-16">
-      <div className="flex items-center gap-4 my-6">
+    <div className="px-16 h-screen">
+      <div className="flex items-center gap-4 my-6 ">
         <hr className="flex-grow border-t-2 border-gray-900" />
         <h1 className="text-2xl font-semibold">Contact</h1>
         <hr className="flex-grow border-t-2 border-gray-900" />
@@ -26,6 +27,7 @@ export default function Contact() {
           <Mail color="#000000" size={24} />
         </a>
       </div>
+      <Contactform/>
     </div>
   );
 }

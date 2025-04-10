@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div className="md:px-16 px-8">
+    <div className="md:px-16 px-8 h-full">
       <div className="flex items-center gap-4 my-6">
         <hr className="flex-grow border-t-2 border-gray-900" />
         <h1 className="text-2xl font-semibold">Projects</h1>
