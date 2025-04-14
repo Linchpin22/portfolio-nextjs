@@ -1,5 +1,9 @@
 
 import { ChevronsDown } from "lucide-react";
+import Skills from "./components/skills";
+import Image from 'next/image';
+import boy from '../../public/boy.jpg'
+
 
 
 export default function Home() {
@@ -40,14 +44,16 @@ export default function Home() {
             </p>
           </div>
           <div className="md:w-1/2 mt-6 md:mt-0">
-            <img
-              src="https://images.unsplash.com/flagged/photo-1575227057258-50cb9bffb1af?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJveSUyMHdvcmtpbmd8ZW58MHx8MHx8fDA%3D"
+            <Image
+              src={boy}
               alt="Boy working"
               className="w-full h-50 object-cover rounded-md"
             />
           </div>
         </div>
       </div>
+
+      <Skills/>
     </>
   );
 }

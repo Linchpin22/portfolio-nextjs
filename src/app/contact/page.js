@@ -2,13 +2,13 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import Contactform from "../components/Contactform";
 export default function Contact() {
   return (
-    <div className="px-16 h-screen">
+    <div className="md:px-16 h-full">
       <div className="flex items-center gap-4 my-6 ">
         <hr className="flex-grow border-t-2 border-gray-900" />
-        <h1 className="text-2xl font-semibold">Contact</h1>
+        <h1 className="text-4xl font-semibold">Contact</h1>
         <hr className="flex-grow border-t-2 border-gray-900" />
       </div>
-      <div className="flex flex-row space-x-6 justify-center">
+      <div className="flex flex-row space-x-6 mb-2 justify-center">
         <a
           href="https://github.com/Linchpin22"
           target="_blank"

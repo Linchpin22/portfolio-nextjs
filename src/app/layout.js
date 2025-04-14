@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
-        <footer className="flex justify-center">
-          <h1>Anuj Tiwari-2025</h1>
-        </footer>
+       <Footer/>
       </body>
     </html>
   );
