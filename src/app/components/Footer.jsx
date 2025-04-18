@@ -6,7 +6,7 @@ export default function footer() {
       {/* <hr className="flex-grow border-t-2 border-gray-900" /> */}
       <div className="flex md:flex-row flex-col justify-between space-y-8 md:space-y-0 ">
         <div className="flex flex-col space-y-4">
-          <h1 className="text-3xl font-bold">Anuj</h1>
+          <h2 className="text-3xl font-bold">Anuj</h2>
           <h2 className="font-light text-xl">Subscribe now</h2>
           <input
             className="border-b-2 border-gray-400 focus:outline-none focus:border-black"
@@ -27,14 +27,14 @@ export default function footer() {
         </div>
         <div className="flex flex-row gap-3 space-x-3.5 ">
           <div className="flex flex-col space-y-2 text-xl font-light">
-            <h1 className="text-2xl font-medium">Information</h1>
+            <h2 className="text-2xl font-medium">Information</h2>
             <h3>About</h3>
             <h3>More Information</h3>
             <h3>Blog</h3>
             <h3>Events</h3>
           </div>
           <div className="flex flex-col space-y-2 text-xl font-light">
-            <h1 className="text-2xl font-medium">Information</h1>
+            <h2 className="text-2xl font-medium">Information</h2>
             <h3>About</h3>
             <h3>More Information</h3>
             <h3>Blog</h3>
@@ -49,20 +49,20 @@ export default function footer() {
           </div> */}
         </div>
         <div className="space-y-2">
-          <h1 className="text-2xl font-medium">Contact us</h1>
-          <h1 className="flex flex-row gap-3">
+          <h2 className="text-2xl font-medium">Contact us</h2>
+          <h2 className="flex flex-row gap-3">
             <PhoneCall color="#000000" />
             +91 xxx xxx xxxx
-          </h1>
-          <h1 className="flex flex-row gap-3">
+          </h2>
+          <h2 className="flex flex-row gap-3">
             <Mail color="#000000" />
             emailid@provider.com
-          </h1>
+          </h2>
         </div>
       </div>
       <div>
       <hr className="flex-grow border-t-2 border-gray-900" />
-      <h1 className="flex justify-center font-medium">© 2025 AnujTiwari All rights reserved.</h1>
+      <h2 className="flex justify-center font-medium">© 2025 AnujTiwari All rights reserved.</h2>
       </div>
     </div>
   );

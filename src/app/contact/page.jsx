@@ -1,11 +1,12 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { FaGithub , FaLinkedin } from "react-icons/fa";
 import Contactform from "../components/Contactform";
 export default function Contact() {
   return (
-    <div className="md:px-16 h-full">
+    <section className="md:px-16 h-full">
       <div className="flex items-center gap-4 my-6 ">
         <hr className="flex-grow border-t-2 border-gray-900" />
-        <h1 className="text-4xl font-semibold">Contact</h1>
+        <h2 className="text-4xl font-semibold">Contact</h2>
         <hr className="flex-grow border-t-2 border-gray-900" />
       </div>
       <div className="flex flex-row space-x-6 mb-2 justify-center">
@@ -14,20 +15,20 @@ export default function Contact() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Github color="#000000" size={24} />
+          <FaGithub color="#000000" size={24} />
         </a>
         <a
           href="https://www.linkedin.com/in/anuj-tiwari-3717a21b4/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Linkedin color="#000000" size={24} />
+          <FaLinkedin color="#000000" size={24} />
         </a>
         <a href="mailto:tiwarianuj712@gmail.com">
           <Mail color="#000000" size={24} />
         </a>
       </div>
-      <Contactform/>
-    </div>
+      <Contactform />
+    </section>
   );
 }

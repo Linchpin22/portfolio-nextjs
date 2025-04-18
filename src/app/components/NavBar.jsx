@@ -32,7 +32,7 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="space-x-6 hidden md:flex">
-          <a
+          <Link
             href="https://drive.google.com/file/d/1mYILwf0TnSzCdNiyKQDoGsy7ZLWQdfBC/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
@@ -56,7 +56,7 @@ export default function Navbar() {
               </svg>
             </span>
             <span className="relative">Resume</span>
-          </a>
+          </Link>
           <Link
             href="/contact"
             className="relative inline-flex items-center px-12 py-2 overflow-hidden text-lg font-medium text-black border-2 border-[#C4C4C4] rounded-full hover:text-white group hover:bg-gray-50"
@@ -100,14 +100,14 @@ export default function Navbar() {
           <Link className="hover:text-gray-400" href="/contact">
             Contact
           </Link>
-          <a
+          <Link
             className="hover:text-gray-400"
             target="_blank"
             rel="noopener noreferrer"
             href="https://drive.google.com/file/d/1mYILwf0TnSzCdNiyKQDoGsy7ZLWQdfBC/view?usp=drive_link"
           >
             Resume
-          </a>
+          </Link>
           <Link className="hover:text-gray-400" href="/contact">
             Hire
           </Link>
