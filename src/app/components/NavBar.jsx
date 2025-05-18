@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -85,35 +86,61 @@ export default function Navbar() {
       </nav>
 
       {/* mobile navbar */}
-      {isOpen && (
-        <div className="flex flex-col md:hidden right-0 pr-3 bg-[#C4C4C4] w-1/2 space-y-2 text-xl absolute p-2 -translate-y-12 transition-transform duration-300 ease-in-out rounded-l-lg">
-          <div className="flex justify-end">
-            <X color="#000000" onClick={close} className="cursor-pointer" />
-          </div>
-          <div className="flex flex-col pl-4 space-y-2">
-          <Link className="hover:text-gray-400" href="/">
-            Home
-          </Link>
-          <Link className="hover:text-gray-400" href="/project">
-            Projects
-          </Link>
-          <Link className="hover:text-gray-400" href="/contact">
-            Contact
-          </Link>
-          <Link
-            className="hover:text-gray-400"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://drive.google.com/file/d/1mYILwf0TnSzCdNiyKQDoGsy7ZLWQdfBC/view?usp=drive_link"
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "100%", opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="fixed top-0 right-0 h-screen w-[85%] bg-white/10 backdrop-blur-md text-white shadow-2xl z-50 rounded-l-2xl p-6 flex flex-col justify-start space-y-6"
           >
-            Resume
-          </Link>
-          <Link className="hover:text-gray-400" href="/contact">
-            Hire
-          </Link>
-          </div>
-        </div>
-      )}
+            <div className="flex justify-end">
+              <X
+                size={28}
+                color="#ffffff"
+                onClick={() => setIsOpen(false)}
+                className="cursor-pointer"
+              />
+            </div>
+
+            <div className="flex flex-col space-y-6 text-2xl font-semibold pl-4">
+              <Link
+                className="hover:text-gray-300 transition-colors duration-200"
+                href="/"
+              >
+                Home
+              </Link>
+              <Link
+                className="hover:text-gray-300 transition-colors duration-200"
+                href="/project"
+              >
+                Projects
+              </Link>
+              <Link
+                className="hover:text-gray-300 transition-colors duration-200"
+                href="/contact"
+              >
+                Contact
+              </Link>
+              <Link
+                className="hover:text-gray-300 transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://drive.google.com/file/d/1mYILwf0TnSzCdNiyKQDoGsy7ZLWQdfBC/view?usp=drive_link"
+              >
+                Resume
+              </Link>
+              <Link
+                className="hover:text-gray-300 transition-colors duration-200"
+                href="/contact"
+              >
+                Hire
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

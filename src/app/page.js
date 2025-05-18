@@ -1,9 +1,12 @@
+"use client"
+
 import Joke from "./components/Joke";
 import Image from "next/image";
 import Hero from "./components/Hero";
 import Navbar from "./components/NavBar";
 import Skill from "./components/Skills";
 import Experience from "./components/Experience";
+import { motion} from "framer-motion";
 
 export default function Home() {
   return (
@@ -34,45 +37,53 @@ export default function Home() {
       </div>
 
       {/* About Section */}
-      <section id="about" className="bg-[#F2F2F2] md:px-16 h-auto p-4 mb-8">
-        <div className="flex items-center gap-4 my-6">
-          <hr className="flex-grow border-t-2 border-gray-900" />
-          <h2 className="text-4xl font-semibold">About</h2>
-          <hr className="flex-grow border-t-2 border-gray-900" />
-        </div>
+      <section id="about" className="bg-[#F2F2F2] md:px-16 p-6 md:py-12 py-8 mb-12">
+  <div className="flex items-center gap-4 mb-10">
+    <hr className="flex-grow border-t-2 border-gray-900" />
+    <h2 className="text-4xl font-bold text-gray-800 tracking-wide">About</h2>
+    <hr className="flex-grow border-t-2 border-gray-900" />
+  </div>
 
-        <div className="w-full flex md:flex-row md:gap-x-7 flex-col">
-          <div className="md:w-1/2 text-justify">
-            <p className="text-xl">
-              I&apos;m a recent B.Tech graduate and a dedicated full stack developer
-              with a strong passion for building efficient, user-friendly web
-              applications. I have completed two internships as a developer,
-              where I gained hands-on experience with modern technologies like
-              React, Next js, Tailwind and JavaScript. During these internships,
-              I contributed to real-world projects, improved my problem-solving
-              skills, and collaborated with cross-functional teams. I enjoy
-              working on both the front-end and back-end, and I&apos;m always curious
-              to learn new tools and frameworks. I also have experience using
-              Git, GitHub, and RESTful APIs in team environments. My strong
-              communication skills and eagerness to adapt make me a reliable
-              team player. I&apos;m excited to continue growing as a developer and
-              take on challenging opportunities in the fast-paced tech industry.
-            </p>
-          </div>
+  <div className="flex flex-col md:flex-row md:gap-10 items-center">
+    {/* Text Section */}
+    <motion.div
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="md:w-1/2 text-justify text-gray-700 text-lg leading-relaxed space-y-4"
+    >
+  <p>
+  I&apos;m a B.Tech graduate and a passionate full stack developer skilled in building clean, user-friendly web apps using React, Next.js, Tailwind CSS, and JavaScript.
+</p>
+<p>
+  Through two internships, I gained hands-on experience, improved my problem-solving skills, and worked closely with cross-functional teams.
+</p>
+<p>
+  I’m confident in both frontend and backend tasks, and I’m always eager to learn, adapt, and contribute effectively to any team.
+</p>
+    </motion.div>
 
-          <div className="md:w-1/2 mt-6 md:mt-0">
-            <div className="w-full h-[400px]">
-              <Image
-                src="https://anuj-portfolio22.netlify.app/assets/icon-BiWBgDQb.svg"
-                alt="Boy working"
-                width={400}
-                height={100}
-                className="w-full h-10/12 object-cover rounded-md"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Image Section */}
+    <motion.div
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="md:w-1/2 w-full mt-8 md:mt-0"
+    >
+      <div className="w-full h-[400px] bg-white rounded-md shadow-md overflow-hidden">
+        <Image
+          src="https://anuj-portfolio22.netlify.app/assets/icon-BiWBgDQb.svg"
+          alt="Boy working"
+          width={500}
+          height={400}
+          className="w-full h-full object-contain p-6"
+        />
+      </div>
+    </motion.div>
+  </div>
+</section>
       <Skill />
       <Experience/>
       <Joke />
