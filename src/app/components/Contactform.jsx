@@ -1,7 +1,7 @@
 export default function ContactForm() {
   return (
-    <div className="bg-[#F2F2F2] py-10 px-4 md:px-16 flex justify-center">
-      <form className="bg-white p-6 md:p-10 rounded-lg  w-full max-w-xl flex flex-col gap-4">
+    <div className="py-10 px-4 md:px-16 flex justify-center">
+      <form className="bg-[#F2F2F2] p-6 md:p-10 rounded-lg  w-full max-w-xl flex flex-col gap-4">
         <div className="flex flex-col">
           <label className="mb-1 font-medium">Name</label>
           <input

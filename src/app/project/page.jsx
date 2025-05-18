@@ -1,9 +1,14 @@
-import Image from 'next/image';
-import boy from '../../../public/boy.jpg'
+import projects from "./data.js";
+import p1 from "../../../public/p1.png";
+import boy from "../../../public/boy.jpg";
+import Image from "next/image";
+import Navbar2 from "../components/NavBar2.jsx";
 
 export default function Contact() {
   return (
-    <section className="md:px-16 px-8 h-full">
+    <>
+    <Navbar2/>
+    <section className="md:px-16 h-full">
       <div className="flex items-center gap-4 my-6">
         <hr className="flex-grow border-t-2 border-gray-900" />
         <h2 className="text-4xl font-semibold">Projects</h2>
@@ -12,69 +17,72 @@ export default function Contact() {
 
       {/* projects */}
 
-      <div className="w-full flex md:flex-row flex-col md:gap-x-7 space-y-7">
-        <div className="md:w-1/2 text-justify">
-          <h2 className="text-3xl">Project Name</h2>
-          <p className="">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            sit amet vestibulum felis. Vivamus facilisis ligula id fringilla
-            gravida.
-          
-             <br></br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            sit amet vestibulum felis. Vivamus facilisis ligula id fringilla
-            gravida.
-          
-            <br></br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            sit amet vestibulum felis. Vivamus facilisis ligula id fringilla
-            gravida.
-          </p>
-          <hr className="my-2 bg-gray-800" />
-          <span className="gap-x-3 flex flex-row">HTML | CSS | Js | Next js</span>
-        </div>
-        <div className="md:w-1/2">
-          <Image
-            src={boy}
-            alt="Boy working"
-            width={200}
-            height={200}
-            className="w-full h-50 mt-7 object-cover rounded-md"
-          />
-        </div>
-      </div>
+      <section className="bg-white py-12 px-4 md:px-16">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col justify-between transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
+              style={{ height: "450px" }}
+            >
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                style={{ height: "450px" }} // total card height fixed
+              >
+                {/* Image container is 40% height */}
+                <div
+                  className="relative w-full overflow-hidden rounded-t-2xl bg-gray-100"
+                  style={{ height: "40%" }}
+                >
+                  <Image
+                    src={project.img}
+                    alt={project.name}
+                    layout="fill"
+                    objectFit="contain" // maintain full image without cropping
+                    className="brightness-90 hover:brightness-110 transition duration-300"
+                  />
+                </div>
 
-      <div className="w-full flex md:flex-row flex-col-reverse md:gap-x-7 space-y-7 ">
-        <div className="md:w-1/2">
-          <Image
-            src={boy}
-            alt="Boy working"
-            width={200}
-            height={200}
-            className="w-full h-50 object-cover mt-7 rounded-md"
-          />
+                {/* Content takes remaining 60% height */}
+                <div className="p-6 flex flex-col flex-grow">
+  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+    {project.name}
+  </h3>
+
+  {/* Scrollable description only */}
+  <div className="text-gray-600 mb-5 leading-relaxed overflow-y-auto pr-1" style={{ maxHeight: "120px" }}>
+    {project.description}
+  </div>
+
+  <div className="mt-auto flex md:flex-row flex-col  gap-4">
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block px-5 py-2 text-indigo-600 border-2 border-indigo-600 rounded-full font-semibold hover:bg-indigo-600 hover:text-white transition"
+    >
+      View Project →
+    </a>
+    {project.live && (
+      <a
+        href={project.live}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-5 py-2 text-indigo-600 border-2 border-indigo-600 rounded-full font-semibold hover:bg-indigo-600 hover:text-white transition"
+      >
+        Live →
+      </a>
+    )}
+  </div>
+</div>
+
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="md:w-1/2 text-justify mb-7">
-          <h2 className="text-3xl">Project Name</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            sit amet vestibulum felis. Vivamus facilisis ligula id fringilla
-            gravida.
-          
-             <br></br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            sit amet vestibulum felis. Vivamus facilisis ligula id fringilla
-            gravida.
-          
-            <br></br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            sit amet vestibulum felis. Vivamus facilisis ligula id fringilla
-            gravida.
-          </p>
-          <hr className="my-2 bg-gray-800" />
-          <span className="gap-x-3 flex flex-row">HTML | CSS | Js | Next js</span>
-        </div>
-      </div>
+      </section>
     </section>
+    </>
   );
 }

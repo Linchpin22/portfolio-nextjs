@@ -1,8 +1,12 @@
 import { Mail } from "lucide-react";
 import { FaGithub , FaLinkedin } from "react-icons/fa";
 import Contactform from "../components/Contactform";
+import Navbar2 from "../components/NavBar2";
+import ContactPage from "../components/ContactPage"
 export default function Contact() {
   return (
+    <>
+    <Navbar2/>
     <section className="md:px-16 h-full">
       <div className="flex items-center gap-4 my-6 ">
         <hr className="flex-grow border-t-2 border-gray-900" />
@@ -28,7 +32,13 @@ export default function Contact() {
           <Mail color="#000000" size={24} />
         </a>
       </div>
-      <Contactform />
+      <div className="w-full flex flex-col md:flex-row justify-between">
+        <div className="md:w-1/2 w-full"> <Contactform  /></div>
+       <div className="md:w-1/2 w-full">  <ContactPage/> </div>
+        
+      </div>
+      
     </section>
+    </>
   );
 }

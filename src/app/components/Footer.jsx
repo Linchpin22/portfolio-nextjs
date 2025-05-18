@@ -1,4 +1,5 @@
 import { PhoneCall, Mail } from "lucide-react";
+import Link from "next/link";
 
 export default function footer() {
   return (
@@ -13,7 +14,7 @@ export default function footer() {
             type="email"
             placeholder="Email"
           />
-          <a href="#_" className="relative inline-block text-lg group">
+          <a href="/contact" className="relative inline-block text-lg group">
             <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
               <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
               <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
@@ -27,19 +28,14 @@ export default function footer() {
         </div>
         <div className="flex flex-row gap-3 space-x-3.5 ">
           <div className="flex flex-col space-y-2 text-xl font-light">
-            <h2 className="text-2xl font-medium">Information</h2>
-            <h3>About</h3>
-            <h3>More Information</h3>
-            <h3>Blog</h3>
-            <h3>Events</h3>
+            <h2 className="text-2xl font-medium">Quick Links</h2>
+             <h3><Link href="#about">About</Link></h3>
+            <h3><Link href="/project">Projects</Link></h3>
+            <h3><Link href="#skill">Skills</Link></h3>
+            <h3><Link href="#exp">Experience</Link></h3>
+             <h3><Link href="/contact">Contact</Link></h3>
           </div>
-          <div className="flex flex-col space-y-2 text-xl font-light">
-            <h2 className="text-2xl font-medium">Information</h2>
-            <h3>About</h3>
-            <h3>More Information</h3>
-            <h3>Blog</h3>
-            <h3>Events</h3>
-          </div>
+      
           {/* <div className="flex flex-col space-y-2 text-xl font-light">
             <h1 className="text-2xl font-medium">Information</h1>
             <h3>About</h3>
@@ -49,20 +45,20 @@ export default function footer() {
           </div> */}
         </div>
         <div className="space-y-2">
-          <h2 className="text-2xl font-medium">Contact us</h2>
+          <h2 className="text-2xl font-medium">Contact</h2>
           <h2 className="flex flex-row gap-3">
             <PhoneCall color="#000000" />
             +91 xxx xxx xxxx
           </h2>
           <h2 className="flex flex-row gap-3">
             <Mail color="#000000" />
-            emailid@provider.com
+            tiwarianuj712@gmail.com
           </h2>
         </div>
       </div>
       <div>
       <hr className="flex-grow border-t-2 border-gray-900" />
-      <h2 className="flex justify-center font-medium">© 2025 AnujTiwari All rights reserved.</h2>
+      <h2 className="flex justify-center font-medium">© 2025 AnujTiwari All rights reserved. || Made with 💖</h2>
       </div>
     </div>
   );

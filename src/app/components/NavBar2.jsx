@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
-export default function Navbar() {
+export default function Navbar2() {
   const [isOpen, setIsOpen] = useState(false);
 
   const open = () => {
@@ -16,11 +16,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="text bg-transparent px-8 py-4 text-xl sticky flex justify-between items-center">
+      <nav className="text bg-transparent px-8 py-4 text-xl  flex justify-between items-center">
         <div className="text-2xl font-bold">
           <Link href="/">Anuj</Link>
         </div>
-        <div className="space-x-6 hidden bg-white/30 text-white border-1 rounded-full px-9 py-2 md:block xl:ml-48">
+        <div className="space-x-6 hidden border-1 rounded-full px-9 py-2 md:block xl:ml-48">
           <Link className="hover:text-gray-300" href="/">
             Home
           </Link>
@@ -81,7 +81,7 @@ export default function Navbar() {
             <span className="relative">Hire</span>
           </Link>
         </div>
-        <Menu color="#ffffff" className="md:hidden" onClick={open} />
+        <Menu  className="md:hidden" onClick={open} />
       </nav>
 
       {/* mobile navbar */}
