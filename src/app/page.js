@@ -44,18 +44,18 @@ export default function Home() {
         <div className="w-full flex md:flex-row md:gap-x-7 flex-col">
           <div className="md:w-1/2 text-justify">
             <p className="text-xl">
-              I&apos;sm a recent B.Tech graduate and a dedicated full stack developer
+              I&apos;m a recent B.Tech graduate and a dedicated full stack developer
               with a strong passion for building efficient, user-friendly web
               applications. I have completed two internships as a developer,
               where I gained hands-on experience with modern technologies like
               React, Next js, Tailwind and JavaScript. During these internships,
               I contributed to real-world projects, improved my problem-solving
               skills, and collaborated with cross-functional teams. I enjoy
-              working on both the front-end and back-end, and I&apos;sm always curious
+              working on both the front-end and back-end, and I&apos;m always curious
               to learn new tools and frameworks. I also have experience using
               Git, GitHub, and RESTful APIs in team environments. My strong
               communication skills and eagerness to adapt make me a reliable
-              team player. I&apos;sm excited to continue growing as a developer and
+              team player. I&apos;m excited to continue growing as a developer and
               take on challenging opportunities in the fast-paced tech industry.
             </p>
           </div>
