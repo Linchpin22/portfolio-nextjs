@@ -34,7 +34,7 @@ export default function Navbar2() {
         </div>
         <div className="space-x-6 hidden md:flex">
           <Link
-            href="https://drive.google.com/file/d/1mYILwf0TnSzCdNiyKQDoGsy7ZLWQdfBC/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1oSatgM5YKsSssvZRcbT0BBsgychuLwDN/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="relative inline-flex items-center xl:px-12 px-8 py-2 overflow-hidden text-lg font-medium border-2 border-[#C4C4C4] rounded-full hover:text-white group hover:bg-gray-50"
@@ -107,7 +107,7 @@ export default function Navbar2() {
           className="hover:text-gray-300 transition-colors duration-200"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://drive.google.com/file/d/1mYILwf0TnSzCdNiyKQDoGsy7ZLWQdfBC/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1oSatgM5YKsSssvZRcbT0BBsgychuLwDN/view?usp=drive_link"
         >
           Resume
         </Link>

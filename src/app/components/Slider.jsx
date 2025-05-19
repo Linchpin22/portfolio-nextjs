@@ -36,7 +36,7 @@ const SkillMarquee = () => (
           className="flex flex-col items-center min-w-[120px] px-4"
         >
           <div className="text-5xl mb-2 drop-shadow-lg">{skill.icon}</div>
-          <span className="text-lg font-semibold text-gray-700 dark:text-white">{skill.name}</span>
+          <span className="text-lg font-semibold">{skill.name}</span>
         </motion.div>
       ))}
     </motion.div>
