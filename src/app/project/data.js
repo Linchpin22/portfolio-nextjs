@@ -3,15 +3,23 @@ import p1 from "../../../public/p1.png"
 import p2 from "../../../public/p2.png"
 import p3 from "../../../public/p3.png"
 import p4 from "../../../public/p4.png"
+import p5 from "../../../public/p5.png"
 
 
 const projects = [
     {
     name: "Music Player",
     img: p0,
-    description:" Created a responsive music player with JavaScript that allows for real-time seekbar control for precise playback progress, JSON-based playlist integration, and search capabilities For improved user control and experience, important playback capabilities like play/pause, next/previous song navigation, and manual seek functionality were implemented.",
+    description:"Created a responsive music player with JavaScript that allows for real-time seekbar control for precise playback progress, JSON-based playlist integration, and search capabilities For improved user control and experience, important playback capabilities like play/pause, next/previous song navigation, and manual seek functionality were implemented.",
     "live":"https://music-player-linchpin22s-projects.vercel.app/",
     link: "https://github.com/Linchpin22/MusicPlayer",
+  },
+  {
+    name: "Neelabh Hospital Official Website",
+    img: p5,
+    description:
+      "Developed a live admin dashboard for a hospital during my internship using Next.js, Tailwind CSS, and React hooks, featuring intuitive patient and service management with streamlined data display and real-time updates.",
+    live: "https://www.neelabhhospital.com/",
   },
   {
     name: "Admin Side Product listing website",
