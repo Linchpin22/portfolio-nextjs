@@ -59,19 +59,14 @@ export default function Navbar() {
           {/* Desktop actions */}
           <div className="hidden md:flex items-center gap-2">
             <Link
-              href="https://drive.google.com/file/d/1oSatgM5YKsSssvZRcbT0BBsgychuLwDN/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1WHNnaPDt_L0RaoZ1BQ_M_egVc_jDjWDq/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium px-4 py-1.5 rounded-lg border border-white/15 text-white/80 hover:border-white/35 hover:text-white hover:bg-white/5 transition-all duration-150"
             >
               Resume
             </Link>
-            <Link
-              href="#contact"
-              className="text-sm font-medium px-4 py-1.5 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-150"
-            >
-              Hire me
-            </Link>
+           
           </div>
 
           {/* Mobile menu toggle */}
