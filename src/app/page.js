@@ -223,11 +223,11 @@ export default function Home() {
                   <span className="font-semibold text-gray-800">
                     VIDYAOne IT Solutions
                   </span>
-                  , where I've shipped multiple live websites solo, including a
+                  , where I&apos;ve shipped multiple live websites solo, including a
                   school SaaS platform and a hospital website.
                 </p>
                 <p>
-                  My work goes beyond writing components. I've integrated
+                  My work goes beyond writing components. I&apos;ve integrated
                   payment gateways, built and consumed REST APIs, deployed on
                   AWS, set up CDN delivery, handled SEO and analytics — and kept
                   things running in production.
