@@ -1,65 +1,72 @@
-import { PhoneCall, Mail } from "lucide-react";
+import {
+  PhoneCall,
+  Mail,
+  Linkedin,
+  Github,
+} from "lucide-react";
 import Link from "next/link";
 
-export default function footer() {
+export default function Footer() {
   return (
-    <div className="flex flex-col px-5 pt-3 space-y-6">
-      {/* <hr className="flex-grow border-t-2 border-gray-900" /> */}
-      <div className="flex md:flex-row flex-col justify-between space-y-8 md:space-y-0 ">
-        <div className="flex flex-col space-y-4">
-          <h2 className="text-3xl font-bold">Anuj</h2>
-          <h2 className="font-light text-xl">Subscribe now</h2>
-          <input
-            className="border-b-2 border-gray-400 focus:outline-none focus:border-black"
-            type="email"
-            placeholder="Email"
-          />
-          <a href="/contact" className="relative inline-block text-lg group">
-            <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
-              <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
-              <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-              <span className="relative">Subscribe</span>
-            </span>
-            <span
-              className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
-              data-rounded="rounded-lg"
-            ></span>
-          </a>
-        </div>
-        <div className="flex flex-row gap-3 space-x-3.5 ">
-          <div className="flex flex-col space-y-2 text-xl font-light">
-            <h2 className="text-2xl font-medium">Quick Links</h2>
-             <h3><Link href="#about">About</Link></h3>
-            <h3><Link href="/project">Projects</Link></h3>
-            <h3><Link href="#skill">Skills</Link></h3>
-            <h3><Link href="#exp">Experience</Link></h3>
-             <h3><Link href="/contact">Contact</Link></h3>
+    <footer id="contact" className="max-w-7xl mx-auto px-5 py-12 bg-white">
+      <div className="max-w-5xl mx-auto">
+        <hr className="border-t border-gray-200 mb-10" />
+
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+            Let's Connect
+          </h2>
+
+          <p className="text-gray-600 mb-8 max-w-xl mx-auto">
+            I'm always open to discussing new opportunities,
+            collaborations, or just having a chat about technology.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            {/* Phone */}
+            <Link
+              href="tel:+918881970855"
+              className="flex items-center gap-2 rounded-xl border border-gray-200 px-5 py-3 hover:border-indigo-500 hover:text-indigo-600 transition"
+            >
+              <PhoneCall size={18} />
+              <span>+91 888-197-0855</span>
+            </Link>
+
+            {/* Email */}
+            <Link
+              href="mailto:tiwarianuj712@gmail.com"
+              className="flex items-center gap-2 rounded-xl border border-gray-200 px-5 py-3 hover:border-indigo-500 hover:text-indigo-600 transition"
+            >
+              <Mail size={18} />
+              <span>tiwarianuj712@gmail.com</span>
+            </Link>
+
+            {/* LinkedIn */}
+            <Link
+              href="https://www.linkedin.com/in/anuj-tiwari-3717a21b4/"
+              target="_blank"
+              className="flex items-center gap-2 rounded-xl border border-gray-200 px-5 py-3 hover:border-indigo-500 hover:text-indigo-600 transition"
+            >
+              <Linkedin size={18} />
+              <span>LinkedIn</span>
+            </Link>
+
+            {/* GitHub */}
+            <Link
+              href="https://github.com/Linchpin22"
+              target="_blank"
+              className="flex items-center gap-2 rounded-xl border border-gray-200 px-5 py-3 hover:border-indigo-500 hover:text-indigo-600 transition"
+            >
+              <Github size={18} />
+              <span>GitHub</span>
+            </Link>
           </div>
-      
-          {/* <div className="flex flex-col space-y-2 text-xl font-light">
-            <h1 className="text-2xl font-medium">Information</h1>
-            <h3>About</h3>
-            <h3>More Information</h3>
-            <h3>Blog</h3>
-            <h3>Events</h3>
-          </div> */}
         </div>
-        <div className="space-y-2">
-          <h2 className="text-2xl font-medium">Contact</h2>
-          <h2 className="flex flex-row gap-3">
-            <PhoneCall color="#000000" />
-            +91 xxx xxx xxxx
-          </h2>
-          <h2 className="flex flex-row gap-3">
-            <Mail color="#000000" />
-            tiwarianuj712@gmail.com
-          </h2>
+
+        <div className="mt-12 pt-6 border-t border-gray-200 text-center text-gray-500">
+          © 2026 Anuj Tiwari. Made with ❤️ using Next.js & Tailwind CSS
         </div>
       </div>
-      <div>
-      <hr className="flex-grow border-t-2 border-gray-900" />
-      <h2 className="flex justify-center font-medium">© 2025 AnujTiwari All rights reserved. || Made with 💖</h2>
-      </div>
-    </div>
+    </footer>
   );
 }

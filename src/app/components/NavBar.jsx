@@ -1,144 +1,151 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const NAV_LINKS = [
+  { label: "Home",       href: "#home"       },
+  { label: "About",      href: "#about"      },
+  { label: "Skills",     href: "#skills"     },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects",   href: "#projects"   },
+  { label: "Contact",    href: "#contact"    },
+];
 
-  const open = () => {
-    setIsOpen(true);
-  };
-  const close = () => {
-    setIsOpen(false);
-  };
+export default function Navbar() {
+  const [isOpen, setIsOpen]       = useState(false);
+  const [scrolled, setScrolled]   = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
-      <nav className="text bg-transparent px-8 py-4 text-xl sticky flex justify-between items-center">
-        <div className="text-2xl font-bold">
-          <Link href="/">Anuj</Link>
-        </div>
-        <div className="space-x-6 hidden bg-white/30 text-white border-1 rounded-full px-9 py-2 md:block xl:ml-48">
-          <Link className="hover:text-gray-300" href="/">
-            Home
-          </Link>
-          <Link className="hover:text-gray-300" href="/project">
-            Projects
-          </Link>
-          <Link className="hover:text-gray-300" href="/contact">
-            Contact
-          </Link>
-        </div>
-        <div className="space-x-6 hidden md:flex">
+      <nav
+        className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-300 ${
+          scrolled
+            ? "bg-[#0f0f0f]/85 backdrop-blur-md border-b border-white/8 py-3"
+            : "bg-transparent py-5"
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+
+          {/* Logo */}
           <Link
-            href="https://drive.google.com/file/d/1oSatgM5YKsSssvZRcbT0BBsgychuLwDN/view?usp=drive_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative inline-flex items-center xl:px-12 px-8 py-2 overflow-hidden text-lg font-medium border-2 border-[#C4C4C4] rounded-full hover:text-white group hover:bg-gray-50"
+            href="/"
+            className="text-white font-semibold text-lg tracking-tight"
           >
-            <span className="absolute left-0 block w-full h-0 transition-all bg-[#C4C4C4] opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
-            <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </span>
-            <span className="relative">Resume</span>
+            Anuj<span className="text-white/40">.</span>
           </Link>
-          <Link
-            href="/contact"
-            className="relative inline-flex items-center px-12 py-2 overflow-hidden text-lg font-medium border-2 border-[#C4C4C4] rounded-full hover:text-white group hover:bg-gray-50"
+
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center gap-7">
+            {NAV_LINKS.map((l) => (
+              <Link
+                key={l.label}
+                href={l.href}
+                className="text-sm text-white/60 hover:text-white transition-colors duration-150"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Desktop actions */}
+          <div className="hidden md:flex items-center gap-2">
+            <Link
+              href="https://drive.google.com/file/d/1oSatgM5YKsSssvZRcbT0BBsgychuLwDN/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium px-4 py-1.5 rounded-lg border border-white/15 text-white/80 hover:border-white/35 hover:text-white hover:bg-white/5 transition-all duration-150"
+            >
+              Resume
+            </Link>
+            <Link
+              href="#contact"
+              className="text-sm font-medium px-4 py-1.5 rounded-lg bg-white text-black hover:bg-white/90 transition-all duration-150"
+            >
+              Hire me
+            </Link>
+          </div>
+
+          {/* Mobile menu toggle */}
+          <button
+            className="md:hidden text-white/70 hover:text-white"
+            onClick={() => setIsOpen(true)}
+            aria-label="Open menu"
           >
-            <span className="absolute left-0 block w-full h-0 transition-all bg-[#C4C4C4] opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
-            <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </span>
-            <span className="relative">Hire</span>
-          </Link>
+            <Menu size={22} />
+          </button>
         </div>
-        <Menu color="#ffffff" className="md:hidden" onClick={open} />
       </nav>
 
-      {/* mobile navbar */}
+      {/* Mobile drawer */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ x: "100%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: "100%", opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed top-0 right-0 h-screen w-[85%] bg-white/10 backdrop-blur-md text-white shadow-2xl z-50 rounded-l-2xl p-6 flex flex-col justify-start space-y-6"
-          >
-            <div className="flex justify-end">
-              <X
-                size={28}
-                color="#ffffff"
-                onClick={() => setIsOpen(false)}
-                className="cursor-pointer"
-              />
-            </div>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+              onClick={() => setIsOpen(false)}
+            />
 
-            <div className="flex flex-col space-y-6 text-2xl font-semibold pl-4">
-              <Link
-                className="hover:text-gray-300 transition-colors duration-200"
-                href="/"
-              >
-                Home
-              </Link>
-              <Link
-                className="hover:text-gray-300 transition-colors duration-200"
-                href="/project"
-              >
-                Projects
-              </Link>
-              <Link
-                className="hover:text-gray-300 transition-colors duration-200"
-                href="/contact"
-              >
-                Contact
-              </Link>
-              <Link
-                className="hover:text-gray-300 transition-colors duration-200"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://drive.google.com/file/d/1oSatgM5YKsSssvZRcbT0BBsgychuLwDN/view?usp=drive_link"
-              >
-                Resume
-              </Link>
-              <Link
-                className="hover:text-gray-300 transition-colors duration-200"
-                href="/contact"
-              >
-                Hire
-              </Link>
-            </div>
-          </motion.div>
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="fixed top-0 right-0 z-50 h-full w-72 bg-[#111] border-l border-white/10 flex flex-col p-6"
+            >
+              <div className="flex justify-between items-center mb-10">
+                <span className="text-white font-semibold text-lg">
+                  Anuj<span className="text-white/40">.</span>
+                </span>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-white/50 hover:text-white"
+                  aria-label="Close menu"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+
+              <div className="flex flex-col gap-1 flex-1">
+                {NAV_LINKS.map((l) => (
+                  <Link
+                    key={l.label}
+                    href={l.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-white/60 hover:text-white hover:bg-white/5 text-base font-medium px-3 py-2.5 rounded-lg transition-all duration-150"
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="flex flex-col gap-2 pt-6 border-t border-white/10">
+                <Link
+                  href="https://drive.google.com/file/d/1WHNnaPDt_L0RaoZ1BQ_M_egVc_jDjWDq/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="text-sm font-medium text-center py-2.5 rounded-lg border border-white/15 text-white/80 hover:border-white/30 hover:text-white transition-all"
+                >
+                  Resume
+                </Link>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

@@ -1,54 +1,66 @@
-import p0 from "../../../public/p0.png"
-import p1 from "../../../public/p1.png"
-import p2 from "../../../public/p2.png"
-import p3 from "../../../public/p3.png"
-import p4 from "../../../public/p4.png"
-import p5 from "../../../public/p5.png"
-
+import {
+  BuildingStorefrontIcon,
+  Squares2X2Icon,
+  ChatBubbleLeftRightIcon,
+  BuildingOffice2Icon,
+  TableCellsIcon,
+  GlobeAltIcon,
+} from "@heroicons/react/24/outline";
 
 const projects = [
-    {
-    name: "Music Player",
-    img: p0,
-    description:"Created a responsive music player with JavaScript that allows for real-time seekbar control for precise playback progress, JSON-based playlist integration, and search capabilities For improved user control and experience, important playback capabilities like play/pause, next/previous song navigation, and manual seek functionality were implemented.",
-    "live":"https://music-player-linchpin22s-projects.vercel.app/",
-    link: "https://github.com/Linchpin22/MusicPlayer",
+  {
+  name: "VIDYAone Official Website",
+  icon: <GlobeAltIcon className="w-5 h-5 text-green-600" />,
+  category: "production",
+  description: "Took ownership of the company's official website mid-project — refactored existing codebase, resolved legacy issues, and built new marketing landing pages with responsive UI, SEO-friendly structure, and performance optimisation.",
+  tags: ["Next.js", "Tailwind CSS", "SEO", "Vercel"],
+  live: "https://vidyaone.com",
+  link: null,
+},
+  {
+    name: "BlackGiraffe",
+    icon: <BuildingStorefrontIcon className="w-5 h-5 text-blue-600" />,
+    category: "freelance",
+    description: "Full production website for a boutique digital studio. Multi-page, SEO-optimised with OG tags, sitemap, legal pages, and WhatsApp CTA. Custom domain on Vercel.",
+    tags: ["Next.js", "Tailwind CSS", "Vercel", "SEO"],
+    live: "https://blackgiraffe.in",
+    link: null,
   },
   {
-    name: "Neelabh Hospital Official Website",
-    img: p5,
-    description:
-      "Developed a live admin dashboard for a hospital during my internship using Next.js, Tailwind CSS, and React hooks, featuring intuitive patient and service management with streamlined data display and real-time updates.",
+    name: "School Website Template System",
+    icon: <Squares2X2Icon className="w-5 h-5 text-green-600" />,
+    category: "production",
+    description: "ThemeForest-style template listing with SSG-powered pages, WebP thumbnail pipeline, and card UI. Live on VIDYAone's SaaS platform.",
+    tags: ["Next.js", "Tailwind CSS", "SSG", "AWS CDN"],
+    live: "https://test.vidyaone.com/school-website/templates/",
+    link: null,
+  },
+  {
+    name: "Customer Stories UI",
+    icon: <ChatBubbleLeftRightIcon className="w-5 h-5 text-green-600" />,
+    category: "production",
+    description: "Shipped testimonials section with featured cards, expandable content, result pills, and dynamic brand accent theming for VIDYAone's marketing site.",
+    tags: ["React.js", "Tailwind CSS", "Framer Motion"],
+    live: null,
+    link: null,
+  },
+  {
+    name: "Neelabh Hospital Website",
+    icon: <BuildingOffice2Icon className="w-5 h-5 text-violet-600" />,
+    category: "internship",
+    description: "Official hospital website with patient-focused service pages, responsive layout, and real-time data display — built and shipped during internship.",
+    tags: ["Next.js", "Tailwind CSS", "React hooks"],
     live: "https://www.neelabhhospital.com/",
+    link: null,
   },
   {
-    name: "Admin Side Product listing website",
-    img: p4,
-    description:
-      "Crafted a productive admin dashboard for a retail website using Tailwind CSS, Axios, React js, and NPM. Added strong category-based product filtering functionality to improve user experience and product discovery. Developed an intuitive administration interface that facilitates effective product management, enabling the addition of new items and the display of comprehensive product data.",
+    name: "Admin Product Dashboard",
+    icon: <TableCellsIcon className="w-5 h-5 text-violet-600" />,
+    category: "internship",
+    description: "Admin panel for a retail platform with category-based product filtering, product management UI, and comprehensive inventory data display.",
+    tags: ["React.js", "Tailwind CSS", "Axios"],
+    live: null,
     link: "https://github.com/Linchpin22/DemoTask",
-  },
-  {
-    name: "Chess",
-    img: p1,
-    description:
-      "Modeled an interactive game with npm and npx using Node.js, Express.js, EJS, Socket.IO, and CSS. Built a multiplayer, real-time chess game. Implemented game logic and user interface using Node.js, Express.js, and EJS. Leveraged Socket.IO for real-time communication and CSS for styling.",
-    link: "https://github.com/Linchpin22/chess.com",
-  },
-  {
-    name: "SnapRecordz",
-    img: p3,
-    description:
-      "Crafted flexible application using Node js, Express js, EJS and Tailwind css. Developed agile user registration system. Implemented data processing and storage for user profiles. Designed visually appealing user profile cards.",
-    link: "https://github.com/Linchpin22/My-projects/tree/main/SnapRecordz",
-  },
-  {
-    name: "Weather App",
-    img: p2,
-    description:
-      "Developed a responsive weather application utilizing React js, and API integration. Built an online weather application to retrieve and show humidity level and weather data in real-time, improving accessibility and user engagement.",
-      "live":"https://weatherlinchpin22.netlify.app/",
-    link: "https://github.com/Linchpin22/ReactWeather",
   },
 ];
 
